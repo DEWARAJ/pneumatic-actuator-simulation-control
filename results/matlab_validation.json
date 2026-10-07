@@ -1,0 +1,10 @@
+{
+  "baseline": {
+    "max_position_difference_mm": 1.8967733633745709E-7,
+    "passed": true
+  },
+  "tuned": {
+    "max_position_difference_mm": 1.4954518609555656E-5,
+    "passed": true
+  }
+}

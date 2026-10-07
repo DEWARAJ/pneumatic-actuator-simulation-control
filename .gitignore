@@ -1,0 +1,24 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large generated simulation traces (regenerate with the documented scripts)
+results/*.csv
+robustness_results/*.csv
+revision_results/**/*.csv
+upgrade_results/*.csv
+*.mat
+
+# Private application and interview-preparation notes
+ACCESS_REQUEST_DRAFTS.md
+DEMO_SCRIPT.md
+EVIDENCE_CHECKLIST.md
+SHA256_MANIFEST.json

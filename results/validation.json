@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "zero_flow_equal_pressure": true,
+    "flow_reversal": true,
+    "choked_area_scaling": true,
+    "choked_back_pressure_independence": true,
+    "flow_branch_continuity": true,
+    "unforced_equilibrium": true,
+    "sealed_isothermal_pressure_volume": true,
+    "global_mass_conservation": true,
+    "positive_mass_and_volume": true,
+    "nominal_no_endstop_contact": true,
+    "independent_solver_and_tolerance_agreement": true
+  },
+  "passed": true,
+  "max_position_difference_mm": 1.8505427593074053e-05,
+  "scope": "Analytical/software/numerical checks only; no hardware or Amesim validation"
+}

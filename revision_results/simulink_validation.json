@@ -1,0 +1,10 @@
+{
+  "nominal": {
+    "max_position_difference_mm": 0.00029272047603196016,
+    "passed": true
+  },
+  "heavy": {
+    "max_position_difference_mm": 0.0001887396280722542,
+    "passed": true
+  }
+}

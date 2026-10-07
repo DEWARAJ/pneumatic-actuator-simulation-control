@@ -1,0 +1,5 @@
+{
+  "max_position_difference_mm": 0.0060227843233819078,
+  "passed": true,
+  "scope": "Native Simulink reference integration; not Amesim co-simulation"
+}

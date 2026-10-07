@@ -1,0 +1,1048 @@
+{
+  "limits": {
+    "rmse_mm": 4.5,
+    "extension_overshoot_mm": 1.0,
+    "retraction_overshoot_mm": 1.0,
+    "extension_settling_s": 0.7,
+    "late_mean_abs_error_mm": 0.5
+  },
+  "controller_period_s": 0.005,
+  "plant_step_s": 0.0005,
+  "noise_model": "seeded independent position samples; std 0.1 mm; ideal velocity measurement",
+  "seed": 20261005,
+  "previous_gains": [
+    100,
+    30,
+    5
+  ],
+  "selected_gains": [
+    40,
+    2,
+    2
+  ],
+  "selection": "minimax constraint penalty on four training cases; held-out cases unused in selection",
+  "scenarios": {
+    "nominal": {
+      "scenario": {
+        "name": "nominal",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "training",
+      "previous": {
+        "rmse_mm": 3.4748932245391786,
+        "steady_mean_abs_error_mm": 0.17118472756774938,
+        "extension_overshoot_mm": 1.2461554123102818,
+        "extension_settling_s": 0.359,
+        "signed_supply_mass_g": 0.07737055739122868,
+        "min_position_mm": 10.0,
+        "max_position_mm": 36.24615541231029,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.86029788084417,
+        "max_mass_balance_residual_kg": 3.1509625637859973e-19,
+        "late_mean_abs_error_mm": 0.17118472756774938,
+        "retraction_overshoot_mm": 0.16356110344655472,
+        "saturated_fraction": 0.015,
+        "max_abs_integral_m_s": 0.0010691986893685834,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 3.606052232041466,
+        "steady_mean_abs_error_mm": 0.0546524097523953,
+        "extension_overshoot_mm": 0.1857247660084424,
+        "extension_settling_s": 0.28049999999999997,
+        "signed_supply_mass_g": 0.04323227941916458,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.195256607579346,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.1343614088753435,
+        "max_mass_balance_residual_kg": 1.8295911660692887e-19,
+        "late_mean_abs_error_mm": 0.0546524097523953,
+        "retraction_overshoot_mm": 0.0452728511239793,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0021445835603661123,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "heavy": {
+      "scenario": {
+        "name": "heavy",
+        "mass": 0.8,
+        "load": 5,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "training",
+      "previous": {
+        "rmse_mm": 3.9020353334363356,
+        "steady_mean_abs_error_mm": 0.44154611609252187,
+        "extension_overshoot_mm": 4.324598812287,
+        "extension_settling_s": 1.469,
+        "signed_supply_mass_g": 0.2553895833821907,
+        "min_position_mm": 10.0,
+        "max_position_mm": 39.32459881228701,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 4.8718340433109315,
+        "max_mass_balance_residual_kg": 1.0842021724855044e-18,
+        "late_mean_abs_error_mm": 0.44154611609252187,
+        "retraction_overshoot_mm": 0.23629086454675374,
+        "saturated_fraction": 0.103,
+        "max_abs_integral_m_s": 0.0009226080393608903,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": false,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 3.697622081408421,
+        "steady_mean_abs_error_mm": 0.055782641589321766,
+        "extension_overshoot_mm": 0.6188276010588647,
+        "extension_settling_s": 0.3345,
+        "signed_supply_mass_g": 0.05622666224876441,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.61882760105887,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.3864855210004605,
+        "max_mass_balance_residual_kg": 3.2356658585114273e-19,
+        "late_mean_abs_error_mm": 0.055782641589321766,
+        "retraction_overshoot_mm": 0.03690713962973581,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.002159896289889306,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "low_supply": {
+      "scenario": {
+        "name": "low_supply",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 400000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "training",
+      "previous": {
+        "rmse_mm": 3.669734722443003,
+        "steady_mean_abs_error_mm": 0.17706440238912768,
+        "extension_overshoot_mm": 0.34517140865091694,
+        "extension_settling_s": 0.272,
+        "signed_supply_mass_g": 0.04441818292658736,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.34517140865092,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.031813549193298,
+        "max_mass_balance_residual_kg": 1.8295911660692887e-19,
+        "late_mean_abs_error_mm": 0.17706440238912768,
+        "retraction_overshoot_mm": 0.16776497072025845,
+        "saturated_fraction": 0.016,
+        "max_abs_integral_m_s": 0.0011866178494706484,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "robust": {
+        "rmse_mm": 3.905802783079242,
+        "steady_mean_abs_error_mm": 0.06546542494330314,
+        "extension_overshoot_mm": 0.23010096699837418,
+        "extension_settling_s": 0.3185,
+        "signed_supply_mass_g": 0.03855461762056114,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.23010096699838,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 1.9097898943129339,
+        "max_mass_balance_residual_kg": 1.6432439176733427e-19,
+        "late_mean_abs_error_mm": 0.06546542494330314,
+        "retraction_overshoot_mm": 0.055397859142120726,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0025262629575327745,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "slow_valve": {
+      "scenario": {
+        "name": "slow_valve",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.075,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "training",
+      "previous": {
+        "rmse_mm": 3.84808339763608,
+        "steady_mean_abs_error_mm": 0.14925288763577627,
+        "extension_overshoot_mm": 0.5892801180034726,
+        "extension_settling_s": 0.32700000000000007,
+        "signed_supply_mass_g": 0.058197003085071926,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.58928011800348,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.456326248825873,
+        "max_mass_balance_residual_kg": 2.964615315390051e-19,
+        "late_mean_abs_error_mm": 0.14925288763577627,
+        "retraction_overshoot_mm": 0.26412902310083036,
+        "saturated_fraction": 0.02,
+        "max_abs_integral_m_s": 0.0009290666670485122,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "robust": {
+        "rmse_mm": 4.039871493143522,
+        "steady_mean_abs_error_mm": 0.047366726549499846,
+        "extension_overshoot_mm": 0.6367659309224338,
+        "extension_settling_s": 0.38,
+        "signed_supply_mass_g": 0.05015786216853158,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.63676593092244,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.2782758591117416,
+        "max_mass_balance_residual_kg": 2.541098841762901e-19,
+        "late_mean_abs_error_mm": 0.047366726549499846,
+        "retraction_overshoot_mm": 0.41838729028052457,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0022159620418634404,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "high_friction": {
+      "scenario": {
+        "name": "high_friction",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 3,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "holdout",
+      "previous": {
+        "rmse_mm": 3.5376787788518587,
+        "steady_mean_abs_error_mm": 0.17453596376054797,
+        "extension_overshoot_mm": 0.4482712206838116,
+        "extension_settling_s": 0.278,
+        "signed_supply_mass_g": 0.07008416444434042,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.448271220683814,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.7157266970379266,
+        "max_mass_balance_residual_kg": 4.472333961502706e-19,
+        "late_mean_abs_error_mm": 0.17453596376054797,
+        "retraction_overshoot_mm": 0.2512484675685281,
+        "saturated_fraction": 0.014,
+        "max_abs_integral_m_s": 0.0011389749099837531,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "robust": {
+        "rmse_mm": 3.6839665863730326,
+        "steady_mean_abs_error_mm": 0.053659512475902366,
+        "extension_overshoot_mm": 0.3665823084746597,
+        "extension_settling_s": 0.28400000000000003,
+        "signed_supply_mass_g": 0.049224910132845516,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.36658230847466,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.273167854253967,
+        "max_mass_balance_residual_kg": 1.8973538018496328e-19,
+        "late_mean_abs_error_mm": 0.053659512475902366,
+        "retraction_overshoot_mm": 0.18050885433063338,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0021999604413325893,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "position_noise": {
+      "scenario": {
+        "name": "position_noise",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0.1,
+        "delay_ms": 0,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "holdout",
+      "previous": {
+        "rmse_mm": 3.4719529480307214,
+        "steady_mean_abs_error_mm": 0.17112585115618578,
+        "extension_overshoot_mm": 1.2143569576154312,
+        "extension_settling_s": 0.35950000000000004,
+        "signed_supply_mass_g": 0.08181182212656764,
+        "min_position_mm": 9.999898302567875,
+        "max_position_mm": 36.214356957615436,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.930553096683095,
+        "max_mass_balance_residual_kg": 3.4220131069073734e-19,
+        "late_mean_abs_error_mm": 0.17112585115618578,
+        "retraction_overshoot_mm": 0.2217746425408323,
+        "saturated_fraction": 0.014,
+        "max_abs_integral_m_s": 0.001063098389612226,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 3.605115567970107,
+        "steady_mean_abs_error_mm": 0.053090942879279256,
+        "extension_overshoot_mm": 0.16974747692058423,
+        "extension_settling_s": 0.28049999999999997,
+        "signed_supply_mass_g": 0.04452667328879164,
+        "min_position_mm": 9.999959261851231,
+        "max_position_mm": 35.18801008971264,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.157760767728596,
+        "max_mass_balance_residual_kg": 1.2451384324638215e-19,
+        "late_mean_abs_error_mm": 0.053090942879279256,
+        "retraction_overshoot_mm": 0.07424987041220257,
+        "saturated_fraction": 0.0,
+        "max_abs_integral_m_s": 0.00214025001156633,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "feedback_delay": {
+      "scenario": {
+        "name": "feedback_delay",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 10,
+        "drop_pressure": 0,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "holdout",
+      "previous": {
+        "rmse_mm": 3.631539154717081,
+        "steady_mean_abs_error_mm": 0.1790058598710042,
+        "extension_overshoot_mm": 3.734272788906999,
+        "extension_settling_s": 0.9645000000000001,
+        "signed_supply_mass_g": 0.19388608885191908,
+        "min_position_mm": 10.0,
+        "max_position_mm": 38.734272788907,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 4.493114564904271,
+        "max_mass_balance_residual_kg": 8.402566836762659e-19,
+        "late_mean_abs_error_mm": 0.1790058598710042,
+        "retraction_overshoot_mm": 0.21135388593741983,
+        "saturated_fraction": 0.067,
+        "max_abs_integral_m_s": 0.0009347243195917659,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": false,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 3.4860224265718105,
+        "steady_mean_abs_error_mm": 0.05614497710058149,
+        "extension_overshoot_mm": 0.19965080458157758,
+        "extension_settling_s": 0.21099999999999997,
+        "signed_supply_mass_g": 0.054074573522228386,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.19965080458158,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.3826913233717764,
+        "max_mass_balance_residual_kg": 1.8380614955418317e-19,
+        "late_mean_abs_error_mm": 0.05614497710058149,
+        "retraction_overshoot_mm": 0.06133592716565592,
+        "saturated_fraction": 0.003,
+        "max_abs_integral_m_s": 0.0019199198307752205,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "pressure_drop": {
+      "scenario": {
+        "name": "pressure_drop",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 250000,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "holdout",
+      "previous": {
+        "rmse_mm": 3.473581485060387,
+        "steady_mean_abs_error_mm": 0.16976122117818748,
+        "extension_overshoot_mm": 1.2461554123102818,
+        "extension_settling_s": 0.359,
+        "signed_supply_mass_g": 0.07628818321974497,
+        "min_position_mm": 10.0,
+        "max_position_mm": 36.24615541231029,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.819252528851595,
+        "max_mass_balance_residual_kg": 5.590417451878382e-19,
+        "late_mean_abs_error_mm": 0.16976122117818748,
+        "retraction_overshoot_mm": 0.15859735670595634,
+        "saturated_fraction": 0.015,
+        "max_abs_integral_m_s": 0.0010691986893685834,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 3.604631049313541,
+        "steady_mean_abs_error_mm": 0.05353897987187869,
+        "extension_overshoot_mm": 0.1857247660084424,
+        "extension_settling_s": 0.28049999999999997,
+        "signed_supply_mass_g": 0.04244227630548041,
+        "min_position_mm": 10.0,
+        "max_position_mm": 35.20008116677468,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.1054502332978715,
+        "max_mass_balance_residual_kg": 2.320870275476783e-19,
+        "late_mean_abs_error_mm": 0.05353897987187869,
+        "retraction_overshoot_mm": 0.043789928041977275,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0021445835603661123,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "combined": {
+      "scenario": {
+        "name": "combined",
+        "mass": 0.7,
+        "load": 4,
+        "friction": 2,
+        "supply": 600000,
+        "valve_tau": 0.05,
+        "noise_mm": 0.1,
+        "delay_ms": 10,
+        "drop_pressure": 350000,
+        "valve_limit": 1.0,
+        "emergency_load": 0
+      },
+      "split": "holdout",
+      "previous": {
+        "rmse_mm": 3.9647845981555014,
+        "steady_mean_abs_error_mm": 0.10551330158376214,
+        "extension_overshoot_mm": 5.388266145100518,
+        "extension_settling_s": 0.8725,
+        "signed_supply_mass_g": 0.14502192422418259,
+        "min_position_mm": 9.993968783317856,
+        "max_position_mm": 40.38826614510052,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 3.8782215846442547,
+        "max_mass_balance_residual_kg": 6.437450399132683e-19,
+        "late_mean_abs_error_mm": 0.10551330158376214,
+        "retraction_overshoot_mm": 0.3286978544591538,
+        "saturated_fraction": 0.057,
+        "max_abs_integral_m_s": 0.0007442460794264043,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": false,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 3.874992771999802,
+        "steady_mean_abs_error_mm": 0.04301173707953742,
+        "extension_overshoot_mm": 2.048805820139034,
+        "extension_settling_s": 0.48550000000000004,
+        "signed_supply_mass_g": 0.0631154499023177,
+        "min_position_mm": 9.99976003674079,
+        "max_position_mm": 37.04880582013904,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.5225087270948965,
+        "max_mass_balance_residual_kg": 6.708500942254059e-19,
+        "late_mean_abs_error_mm": 0.04301173707953742,
+        "retraction_overshoot_mm": 0.20595468284711343,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0021080211626247143,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      }
+    },
+    "insufficient_supply": {
+      "scenario": {
+        "name": "insufficient_supply",
+        "mass": 0.4,
+        "load": 2.0,
+        "friction": 1.0,
+        "supply": 600000,
+        "valve_tau": 0.025,
+        "noise_mm": 0,
+        "delay_ms": 0,
+        "drop_pressure": 120000,
+        "valve_limit": 1.0,
+        "emergency_load": 15
+      },
+      "split": "failure_demonstration",
+      "previous": {
+        "rmse_mm": 12.687685232050788,
+        "steady_mean_abs_error_mm": 0.26655925729351015,
+        "extension_overshoot_mm": 1.2461554123102818,
+        "extension_settling_s": 0.359,
+        "signed_supply_mass_g": 0.082809365734327,
+        "min_position_mm": -0.09982749936528124,
+        "max_position_mm": 36.24615541231029,
+        "min_pressure_bar_abs": 0.9712392958652563,
+        "max_pressure_bar_abs": 2.7728631264240473,
+        "max_mass_balance_residual_kg": 4.336808689942018e-19,
+        "late_mean_abs_error_mm": 0.26655925729351015,
+        "retraction_overshoot_mm": 0.0,
+        "saturated_fraction": 0.161,
+        "max_abs_integral_m_s": 0.0028619235389173592,
+        "within_stroke": false,
+        "acceptance": {
+          "rmse_mm": false,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "robust": {
+        "rmse_mm": 12.568730864776294,
+        "steady_mean_abs_error_mm": 0.1687030553928021,
+        "extension_overshoot_mm": 0.1857247660084424,
+        "extension_settling_s": 0.28049999999999997,
+        "signed_supply_mass_g": 0.04940074659579672,
+        "min_position_mm": -0.09662315657474008,
+        "max_position_mm": 35.18572476600845,
+        "min_pressure_bar_abs": 0.972094262060941,
+        "max_pressure_bar_abs": 2.486364864963171,
+        "max_mass_balance_residual_kg": 1.8634724839594607e-19,
+        "late_mean_abs_error_mm": 0.1687030553928021,
+        "retraction_overshoot_mm": 0.0,
+        "saturated_fraction": 0.106,
+        "max_abs_integral_m_s": 0.007151742210483502,
+        "within_stroke": false,
+        "acceptance": {
+          "rmse_mm": false,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      }
+    }
+  },
+  "antiwindup": {
+    "disabled": {
+      "rmse_mm": 8.013524000324622,
+      "steady_mean_abs_error_mm": 2.498058826452347,
+      "extension_overshoot_mm": 10.063772413268564,
+      "extension_settling_s": null,
+      "signed_supply_mass_g": 0.09021141797941704,
+      "min_position_mm": 5.36855463495548,
+      "max_position_mm": 45.063772413268566,
+      "min_pressure_bar_abs": 1.0132499999999998,
+      "max_pressure_bar_abs": 3.0415200865777687,
+      "max_mass_balance_residual_kg": 5.72594272343907e-19,
+      "late_mean_abs_error_mm": 2.498058826452347,
+      "retraction_overshoot_mm": 9.63144536504452,
+      "saturated_fraction": 0.365,
+      "max_abs_integral_m_s": 0.006842738009024348,
+      "within_stroke": true,
+      "acceptance": {
+        "rmse_mm": false,
+        "extension_overshoot_mm": false,
+        "retraction_overshoot_mm": false,
+        "extension_settling_s": false,
+        "late_mean_abs_error_mm": false
+      },
+      "accepted": false
+    },
+    "enabled": {
+      "rmse_mm": 6.651091441828177,
+      "steady_mean_abs_error_mm": 0.04101902352418397,
+      "extension_overshoot_mm": 0.29749472951628303,
+      "extension_settling_s": 0.5265,
+      "signed_supply_mass_g": 0.04398770131894475,
+      "min_position_mm": 10.0,
+      "max_position_mm": 35.29749472951629,
+      "min_pressure_bar_abs": 1.0132499999999998,
+      "max_pressure_bar_abs": 2.1245692139741443,
+      "max_mass_balance_residual_kg": 3.3373098121819433e-19,
+      "late_mean_abs_error_mm": 0.04101902352418397,
+      "retraction_overshoot_mm": 0.24775967770968543,
+      "saturated_fraction": 0.194,
+      "max_abs_integral_m_s": 0.00014903570347126155,
+      "within_stroke": true,
+      "acceptance": {
+        "rmse_mm": false,
+        "extension_overshoot_mm": true,
+        "retraction_overshoot_mm": true,
+        "extension_settling_s": true,
+        "late_mean_abs_error_mm": true
+      },
+      "accepted": false
+    },
+    "gains": [
+      100,
+      200,
+      5
+    ],
+    "scenario": {
+      "name": "restricted_valve",
+      "mass": 0.4,
+      "load": 2.0,
+      "friction": 1.0,
+      "supply": 600000,
+      "valve_tau": 0.025,
+      "noise_mm": 0,
+      "delay_ms": 0,
+      "drop_pressure": 0,
+      "valve_limit": 0.08,
+      "emergency_load": 0
+    },
+    "saturation_exercised": true
+  },
+  "validation": {
+    "reference_rhs_equivalence": {
+      "max_derivative_difference": 1.7763568394002505e-15,
+      "passed": true
+    },
+    "nominal": {
+      "step_refinement_difference_mm": 1.6466056643182903e-06,
+      "passed": true
+    },
+    "heavy": {
+      "step_refinement_difference_mm": 4.00546536528934e-05,
+      "passed": true
+    },
+    "feedback_delay": {
+      "step_refinement_difference_mm": 1.0853594387821852e-05,
+      "passed": true
+    },
+    "combined": {
+      "step_refinement_difference_mm": 2.0603194636481525e-05,
+      "passed": true
+    },
+    "restricted_valve": {
+      "step_refinement_difference_mm": 2.0499707036047976e-06,
+      "passed": true
+    },
+    "mass_conservation": {
+      "passed": true
+    },
+    "antiwindup_saturation_exercised": {
+      "passed": true
+    },
+    "all_passed": true
+  },
+  "elapsed_s": 49.51600000000326,
+  "noise_seed_study": {
+    "scope": "five reproducible seeds; no statistical reliability claim",
+    "position_noise": {
+      "20261005": {
+        "rmse_mm": 3.605115567970107,
+        "steady_mean_abs_error_mm": 0.053090942879279256,
+        "extension_overshoot_mm": 0.16974747692058423,
+        "extension_settling_s": 0.28049999999999997,
+        "signed_supply_mass_g": 0.04452667328879164,
+        "min_position_mm": 9.999959261851231,
+        "max_position_mm": 35.18801008971264,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.157760767728596,
+        "max_mass_balance_residual_kg": 1.2451384324638215e-19,
+        "late_mean_abs_error_mm": 0.053090942879279256,
+        "retraction_overshoot_mm": 0.07424987041220257,
+        "saturated_fraction": 0.0,
+        "max_abs_integral_m_s": 0.00214025001156633,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "20261006": {
+        "rmse_mm": 3.609689135339822,
+        "steady_mean_abs_error_mm": 0.054674530584767254,
+        "extension_overshoot_mm": 0.182472969158666,
+        "extension_settling_s": 0.2815,
+        "signed_supply_mass_g": 0.04477808052674614,
+        "min_position_mm": 9.977297907893428,
+        "max_position_mm": 35.20594842164329,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.1619853294718383,
+        "max_mass_balance_residual_kg": 1.9651164376299768e-19,
+        "late_mean_abs_error_mm": 0.054674530584767254,
+        "retraction_overshoot_mm": 0.055912172222947684,
+        "saturated_fraction": 0.0,
+        "max_abs_integral_m_s": 0.002137277424507641,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "20261007": {
+        "rmse_mm": 3.6043766874276133,
+        "steady_mean_abs_error_mm": 0.059228605819939974,
+        "extension_overshoot_mm": 0.18519358194929447,
+        "extension_settling_s": 0.28049999999999997,
+        "signed_supply_mass_g": 0.04507586875095084,
+        "min_position_mm": 9.988089873073987,
+        "max_position_mm": 35.22337847567573,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.1694971597324506,
+        "max_mass_balance_residual_kg": 2.253107639696439e-19,
+        "late_mean_abs_error_mm": 0.059228605819939974,
+        "retraction_overshoot_mm": 0.04950567273628685,
+        "saturated_fraction": 0.0,
+        "max_abs_integral_m_s": 0.002138974162968354,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "20261008": {
+        "rmse_mm": 3.6075442298131772,
+        "steady_mean_abs_error_mm": 0.049024631872303194,
+        "extension_overshoot_mm": 0.21128291137397642,
+        "extension_settling_s": 0.28200000000000003,
+        "signed_supply_mass_g": 0.0448573712482098,
+        "min_position_mm": 9.982415548215615,
+        "max_position_mm": 35.21128291137398,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.1649613600963784,
+        "max_mass_balance_residual_kg": 1.5246593050577406e-19,
+        "late_mean_abs_error_mm": 0.049024631872303194,
+        "retraction_overshoot_mm": 0.03147289329181839,
+        "saturated_fraction": 0.0,
+        "max_abs_integral_m_s": 0.00213985716760192,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      },
+      "20261009": {
+        "rmse_mm": 3.604036883399978,
+        "steady_mean_abs_error_mm": 0.07148963761656932,
+        "extension_overshoot_mm": 0.17574296329326416,
+        "extension_settling_s": 0.2815,
+        "signed_supply_mass_g": 0.044789790524304894,
+        "min_position_mm": 9.99360241796902,
+        "max_position_mm": 35.18357909130805,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.1625363114558795,
+        "max_mass_balance_residual_kg": 1.8973538018496328e-19,
+        "late_mean_abs_error_mm": 0.07148963761656932,
+        "retraction_overshoot_mm": 0.0839691795005669,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0020168081433204876,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": true,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": true
+      }
+    },
+    "combined": {
+      "20261005": {
+        "rmse_mm": 3.874992771999802,
+        "steady_mean_abs_error_mm": 0.04301173707953742,
+        "extension_overshoot_mm": 2.048805820139034,
+        "extension_settling_s": 0.48550000000000004,
+        "signed_supply_mass_g": 0.0631154499023177,
+        "min_position_mm": 9.99976003674079,
+        "max_position_mm": 37.04880582013904,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.5225087270948965,
+        "max_mass_balance_residual_kg": 6.708500942254059e-19,
+        "late_mean_abs_error_mm": 0.04301173707953742,
+        "retraction_overshoot_mm": 0.20595468284711343,
+        "saturated_fraction": 0.001,
+        "max_abs_integral_m_s": 0.0021080211626247143,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "20261006": {
+        "rmse_mm": 3.879289734458165,
+        "steady_mean_abs_error_mm": 0.04379371248764157,
+        "extension_overshoot_mm": 1.9972860086858861,
+        "extension_settling_s": 0.48750000000000004,
+        "signed_supply_mass_g": 0.06251062055275829,
+        "min_position_mm": 9.983694368334668,
+        "max_position_mm": 36.99728600868589,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.5113183677358615,
+        "max_mass_balance_residual_kg": 3.4220131069073734e-19,
+        "late_mean_abs_error_mm": 0.04379371248764157,
+        "retraction_overshoot_mm": 0.20150691248474634,
+        "saturated_fraction": 0.0,
+        "max_abs_integral_m_s": 0.0022298187076188617,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "20261007": {
+        "rmse_mm": 3.8783354253561644,
+        "steady_mean_abs_error_mm": 0.04602432152325995,
+        "extension_overshoot_mm": 2.0313073296923183,
+        "extension_settling_s": 0.48350000000000004,
+        "signed_supply_mass_g": 0.062655586857193,
+        "min_position_mm": 9.995551454187954,
+        "max_position_mm": 37.031307329692325,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.5124003042361034,
+        "max_mass_balance_residual_kg": 3.3203691532368573e-19,
+        "late_mean_abs_error_mm": 0.04602432152325995,
+        "retraction_overshoot_mm": 0.20534882786607533,
+        "saturated_fraction": 0.002,
+        "max_abs_integral_m_s": 0.0019972037428515627,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "20261008": {
+        "rmse_mm": 3.8749001630417363,
+        "steady_mean_abs_error_mm": 0.05549678375949737,
+        "extension_overshoot_mm": 1.9830117307647819,
+        "extension_settling_s": 0.48250000000000004,
+        "signed_supply_mass_g": 0.06259480682773541,
+        "min_position_mm": 9.971175667056306,
+        "max_position_mm": 36.98301173076479,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.512561506674495,
+        "max_mass_balance_residual_kg": 4.1335207826009857e-19,
+        "late_mean_abs_error_mm": 0.05549678375949737,
+        "retraction_overshoot_mm": 0.202812345288933,
+        "saturated_fraction": 0.002,
+        "max_abs_integral_m_s": 0.00199315793128281,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      },
+      "20261009": {
+        "rmse_mm": 3.872549390003769,
+        "steady_mean_abs_error_mm": 0.06400648058066266,
+        "extension_overshoot_mm": 2.0184478991214228,
+        "extension_settling_s": 0.483,
+        "signed_supply_mass_g": 0.06218879036444579,
+        "min_position_mm": 9.986791964913083,
+        "max_position_mm": 37.018447899121426,
+        "min_pressure_bar_abs": 1.0132499999999998,
+        "max_pressure_bar_abs": 2.5036009602071276,
+        "max_mass_balance_residual_kg": 3.083199928005653e-19,
+        "late_mean_abs_error_mm": 0.06400648058066266,
+        "retraction_overshoot_mm": 0.2249012914432736,
+        "saturated_fraction": 0.004,
+        "max_abs_integral_m_s": 0.001765211206195141,
+        "within_stroke": true,
+        "acceptance": {
+          "rmse_mm": true,
+          "extension_overshoot_mm": false,
+          "retraction_overshoot_mm": true,
+          "extension_settling_s": true,
+          "late_mean_abs_error_mm": true
+        },
+        "accepted": false
+      }
+    }
+  }
+}

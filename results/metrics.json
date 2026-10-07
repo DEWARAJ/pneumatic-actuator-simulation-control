@@ -1,0 +1,86 @@
+{
+  "baseline": {
+    "rmse_mm": 3.6863279040860712,
+    "steady_mean_abs_error_mm": 0.22882795160286132,
+    "extension_overshoot_mm": 0.49027137578758206,
+    "extension_settling_s": 0.262,
+    "signed_supply_mass_g": 0.04388333241066073,
+    "min_position_mm": 10.0,
+    "max_position_mm": 35.490271375787586,
+    "min_pressure_bar_abs": 1.0132499999999998,
+    "max_pressure_bar_abs": 2.1472023270009992,
+    "max_mass_balance_residual_kg": 9.147955830346444e-20
+  },
+  "tuned": {
+    "rmse_mm": 3.495381865506447,
+    "steady_mean_abs_error_mm": 0.17680008452943838,
+    "extension_overshoot_mm": 0.38180303444249053,
+    "extension_settling_s": 0.22999999999999998,
+    "signed_supply_mass_g": 0.058151915061067413,
+    "min_position_mm": 10.0,
+    "max_position_mm": 35.38180303444249,
+    "min_pressure_bar_abs": 1.0132499999999998,
+    "max_pressure_bar_abs": 2.4692933624448634,
+    "max_mass_balance_residual_kg": 1.7448878713438587e-19
+  },
+  "heavy_load": {
+    "rmse_mm": 3.8114403026245425,
+    "steady_mean_abs_error_mm": 0.19201914555377855,
+    "extension_overshoot_mm": 3.5976203229163493,
+    "extension_settling_s": 1.124,
+    "signed_supply_mass_g": 0.20138348991201996,
+    "min_position_mm": 10.0,
+    "max_position_mm": 38.597620322916356,
+    "min_pressure_bar_abs": 1.0132499999999998,
+    "max_pressure_bar_abs": 4.532412133543887,
+    "max_mass_balance_residual_kg": 5.421010862427522e-19
+  },
+  "low_supply": {
+    "rmse_mm": 3.706052457725448,
+    "steady_mean_abs_error_mm": 0.1815521904462009,
+    "extension_overshoot_mm": 0.37691744035980856,
+    "extension_settling_s": 0.254,
+    "signed_supply_mass_g": 0.04108100271803548,
+    "min_position_mm": 10.0,
+    "max_position_mm": 35.37691744035981,
+    "min_pressure_bar_abs": 1.0132499999999998,
+    "max_pressure_bar_abs": 1.969905607475145,
+    "max_mass_balance_residual_kg": 9.994988777600744e-20
+  },
+  "high_friction": {
+    "rmse_mm": 3.574854202415281,
+    "steady_mean_abs_error_mm": 0.17191237422004782,
+    "extension_overshoot_mm": 0.41301619534472866,
+    "extension_settling_s": 0.274,
+    "signed_supply_mass_g": 0.06116116168298816,
+    "min_position_mm": 9.999999998858959,
+    "max_position_mm": 35.41301619534473,
+    "min_pressure_bar_abs": 1.0132499999870457,
+    "max_pressure_bar_abs": 2.537339505926028,
+    "max_mass_balance_residual_kg": 2.405573570202213e-19
+  },
+  "valve_lag": {
+    "rmse_mm": 3.8825567969488817,
+    "steady_mean_abs_error_mm": 0.13765636852030552,
+    "extension_overshoot_mm": 0.4025810987760836,
+    "extension_settling_s": 0.20799999999999996,
+    "signed_supply_mass_g": 0.05324322287384903,
+    "min_position_mm": 10.0,
+    "max_position_mm": 35.468593840057395,
+    "min_pressure_bar_abs": 1.0132499999999998,
+    "max_pressure_bar_abs": 2.3504777418136698,
+    "max_mass_balance_residual_kg": 1.5585406229479126e-19
+  },
+  "cross_port_leak": {
+    "rmse_mm": 3.498768140243908,
+    "steady_mean_abs_error_mm": 0.17150331020865192,
+    "extension_overshoot_mm": 0.3901417418187558,
+    "extension_settling_s": 0.22999999999999998,
+    "signed_supply_mass_g": 0.06130148072130975,
+    "min_position_mm": 10.0,
+    "max_position_mm": 35.39014174181876,
+    "min_pressure_bar_abs": 1.0132499999999998,
+    "max_pressure_bar_abs": 2.5254862297195886,
+    "max_mass_balance_residual_kg": 2.0159384144652348e-19
+  }
+}

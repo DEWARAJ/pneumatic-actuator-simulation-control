@@ -6,6 +6,64 @@ An extension of Dewaraj Raparthi's MATLAB soft-robot simulation work, intended t
 
 Read [the sensing and protection upgrade](SENSING_AND_PROTECTION_UPGRADE.md). The controller now estimates velocity from 5 ms position samples and latches a low-supply fault that neutralizes the valve and freezes the integrator. Final gains remain **35, 1, 2**: all 15 specified operating cases and 25 repeated seed runs passed unchanged limits. The upgraded `pneumatic_sampled_controller.slx` matches Python in nominal/heavy checks within 0.0003 mm. Earlier studies below are preserved as history.
 
+## Results at a glance
+
+| Verification item | Recorded result | Status |
+|---|---:|:---:|
+| Specified operating cases | 15/15 passed | Pass |
+| Repeated noise-seed runs | 25/25 passed | Pass |
+| Numerical step-refinement checks | 3/3 passed | Pass |
+| Global mass-conservation check | Residual within numerical tolerance | Pass |
+| Low-supply interlock | Latched at 2.015 s | Pass |
+| Python/Simulink nominal position difference | 0.000295 mm maximum | Pass |
+| Python/Simulink heavy-load position difference | 0.000263 mm maximum | Pass |
+
+The fixed operating-case limits were RMSE <= 4.5 mm, extension and retraction overshoot <= 1 mm, extension settling within +/-0.5 mm in <= 0.7 s, late mean absolute error <= 0.5 mm, and position within the 0-60 mm stroke.
+
+### Representative final operating cases
+
+| Case | Evaluation split | RMSE (mm) | Extension overshoot (mm) | Result |
+|---|---|---:|---:|:---:|
+| Nominal | Tuning | 3.770 | 0.140 | Pass |
+| Heavy load | Tuning | 3.880 | 0.530 | Pass |
+| Combined disturbances | Tuning | 4.000 | 0.600 | Pass |
+| Fresh delay combination | Held-out test | 4.010 | 0.450 | Pass |
+| Fresh sensor combination | Held-out test | 3.810 | 0.590 | Pass |
+
+Full-precision scenarios, metrics, seeds, and acceptance flags are available in [`upgrade_results/report.json`](upgrade_results/report.json). The values are simulation results for the documented illustrative model, not physical test measurements.
+
+## Results and graphs
+
+### Controller repair across disturbance cases
+
+The final gains were selected for the multi-case operating envelope. The revision reduced the previously failing combined-case extension overshoot from about 2.05 mm to below the fixed 1 mm limit.
+
+![Controller response before and after the gain revision](revision_results/revision.png)
+
+### Position-only velocity estimation
+
+The sampled controller receives position every 5 ms. A causal alpha-beta estimator supplies filtered position and velocity estimates; simulated true velocity is retained only for evaluation.
+
+![Alpha-beta velocity estimate compared with simulated truth](upgrade_results/velocity_estimator.png)
+
+### Low-supply protection
+
+Four consecutive supply-pressure samples below 200 kPa absolute latch the fault, command the closed-center valve to neutral, and freeze the integral state. Protection keeps the piston inside its modeled stroke, although it cannot recover tracking when the pneumatic source lacks sufficient authority.
+
+![Protected and unprotected insufficient-supply response](upgrade_results/supply_protection.png)
+
+### Executed Simulink architecture
+
+The final model separates the continuous pneumatic plant from the 5 ms sampled controller, estimator, anti-windup logic, pressure interlock, and diagnostic outputs.
+
+![Executed modular Simulink architecture](upgrade_results/simulink_architecture.png)
+
+### Plant sensitivity study
+
+The reference study varies load, friction, valve lag, leakage, and supply pressure while keeping the declared controller configuration fixed.
+
+![Sensitivity of the simulated actuator response](results/sensitivity.png)
+
 ## What is implemented
 
 - Two variable-volume, ideal-gas chambers at a prescribed constant temperature.
@@ -50,7 +108,7 @@ The MATLAB scripts read the supplied JSON/CSV results and compare traces with Py
 
 The default cylinder has a 20 mm bore, an 8 mm rod, a 60 mm stroke, and a 0.4 kg load. Supply pressure is **6 bar absolute**, approximately 5 bar gauge. These values are design choices, not dimensions inferred from an existing prototype. Commanded positions are 10 mm initially, 35 mm at 0.5 s, and 15 mm at 3 s. A 2 N resisting load is applied at 2 s.
 
-The controller comparison uses fixed illustrative gains: baseline Kp=40, Ki=8, Kd=2; tuned Kp=100, Ki=30, Kd=5. Kp is in 1/m, Ki in 1/(m*s), and Kd in s/m, because valve command is dimensionless. These are not experimentally optimized gains. The sensitivity cases retain the tuned gains, avoiding retuning for each case.
+The historical continuous-controller comparison uses illustrative baseline gains of Kp=40, Ki=8, Kd=2 and tuned gains of Kp=100, Ki=30, Kd=5. The current sampled controller uses Kp=35, Ki=1, Kd=2 with the alpha-beta estimator and protection logic. Kp is in 1/m, Ki in 1/(m*s), and Kd is in s/m because valve command is dimensionless. These gains were selected for the declared simulation cases and were not calibrated on physical hardware.
 
 Position RMSE is calculated over 0.5–5 s, including the load step and retraction. Settling time uses a ±0.5 mm band after extension and before the disturbance. Null settling time means the response did not remain within that band before the observation window ended. Signed supply mass allows reverse flow; it is not a full compressor energy or efficiency measure.
 
@@ -64,4 +122,4 @@ The existing `earthwork-inspired-soft-robot/peristaltic.m` uses a prescribed pre
 
 Read [the sensing and protection upgrade](SENSING_AND_PROTECTION_UPGRADE.md) for the current estimator, interlock, tests, and executed Simulink model. [The controller repair report](CONTROLLER_FIX_REPORT.md) and [earlier robustness report](ROBUSTNESS_REPORT.md) preserve the development history. The original `pneumatic_reference.slx` is a continuous historical reference; `pneumatic_sampled_controller.slx` is the current sampled controller with a separate plant.
 
-Follow [the Amesim build guide](AMESIM_BUILD_GUIDE.md), compare equivalent assumptions and parameters, and record the first licensed Amesim run. Only then describe this as hands-on Amesim project work. Follow [the evidence checklist](EVIDENCE_CHECKLIST.md) before adding results to an application.
+Follow [the Amesim build guide](AMESIM_BUILD_GUIDE.md), compare equivalent assumptions and parameters, and record the first licensed Amesim run. Only then describe this particular model as completed native Amesim work.
